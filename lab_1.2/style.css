@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://a.d-cd.net/f333f24s-960.jpg') center/cover fixed;
+}
+
+.container {
+    background: rgba(30, 30, 30, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 3px solid #ff6b00;
+}
+
+h2 { margin-top: 0; color: #ffffff; }
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+
+label { 
+    display: flex; justify-content: space-between; 
+    align-items: center; font-size: 14px; 
+}
+
+input {
+    width: 60px; padding: 4px;
+    background: #222; color: #ffffff; 
+    border: 1px solid #444; border-radius: 4px;
+}
+
+button {
+    grid-column: span 2; padding: 8px; cursor: pointer;
+    background: #ff6b00; color: black; 
+    border: none; border-radius: 4px; font-weight: bold;
+}
+
+button#clearBtn { background: #555; color: white; }
+
+canvas {
+    background-color: #ffffff; 
+    border: 2px solid #ff6b00;
+    border-radius: 4px;
+}
+
+@font-face {
+    font-family: 'Old London';
+    src: url('OldLondon.ttf') format('truetype'); 
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    color: rgba(255, 255, 255, 0.6);  
+    text-align: center;
+    padding: 5px 0;
+    font-family: 'Old London', serif;
+    font-size: 14px;  
+    letter-spacing: 1px;
+    z-index: 10;
+}

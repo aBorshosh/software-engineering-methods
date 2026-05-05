@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача «Рюкзак»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Моделювання задачі «Рюкзак»</h1>
+    
+    <div class="form-group">
+        <label>Максимальна місткість рюкзака (W):</label>
+        <input type="number" id="capacity" value="14" min="1">
+    </div>
+    
+    <div class="form-group">
+        <label>Вектор ваг предметів w[i] (через кому):</label>
+        <input type="text" id="weights" value="3, 5, 6, 4, 2, 3">
+    </div>
+    
+    <div class="form-group">
+        <label>Вектор цінностей v[i] (через кому):</label>
+        <input type="text" id="values" value="6, 10, 12, 9, 4, 5">
+    </div>
+
+    <div class="form-group">
+        <label>Метод розв'язання:</label>
+        <select id="method">
+            <option value="1" selected>Метод 1: Грубої сили (Перебір)</option>
+            <option value="2">Метод 2: Рекурсивний</option>
+            <option value="3">Метод 3: Жадібний алгоритм</option>
+            <option value="4">Метод 4: Динамічне програмування (з візуалізацією)</option>
+            <option value="5">Метод 5: Метод гілок та меж</option>
+        </select>
+    </div>
+
+    <button id="calculate-btn">Розв'язати</button>
+
+    <div id="results" class="results">
+        <h3>Результат:</h3>
+        <p><strong>Максимальна цінність:</strong> <span id="max-val">0</span></p>
+        <p><strong>Вибрані предмети (номери):</strong> <span id="selected-items">-</span></p>
+    </div>
+
+    <div id="dp-visualization"></div>
+</div>
+
+<footer>by brshsh</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

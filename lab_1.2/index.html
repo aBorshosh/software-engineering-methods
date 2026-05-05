@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделювання кінематики</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Параметри pyxy</h2>
+        
+        <div class="controls">
+            <label>X₀: <input type="number" id="x0" value="0"></label>
+            <label>Y₀: <input type="number" id="y0" value="0"></label>
+            <label>Швидкість (v₀): <input type="number" id="v0" value="0"></label>
+            <label>Прискорення (a): <input type="number" id="a" value="0"></label>
+            <label>Кут (α, град.): <input type="number" id="angle" value="0"></label>
+            <label>Масштаб: <input type="number" id="scale" value="1" step="0.1" min="0.1"></label>
+            <label>Колір: <input type="color" id="color" value="#ff0000"></label>
+            
+            <button id="startBtn">Побудувати траєкторію</button>
+            <button id="clearBtn">Очистити графік</button>
+        </div>
+        
+        <canvas id="myCanvas" width="600" height="400"></canvas>
+    </div>
+
+    <div class="footer">by brshsh</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

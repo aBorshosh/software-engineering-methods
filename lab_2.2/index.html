@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделювання руху тіла</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Моделювання руху тіла,<br>кинутого під кутом до горизонту</h2>
+        
+        <div class="controls">
+            <label>Швидкість (v₀, м/с): <input type="number" id="v0" value="0" step="1"></label>
+            <label>Кут (α, град.): <input type="number" id="angle" value="0" step="1"></label>
+            <label>Поч. висота (h₀, м): <input type="number" id="h0" value="0" step="1"></label>
+            <label>Колір графіка: <input type="color" id="color" value="#ff3700e6"></label>
+
+            <button id="startBtn">Побудувати траєкторію</button>
+            <button id="clearBtn">Очистити графік</button>
+        </div>
+
+        <div class="results">
+            <p>Час польоту (t): <span id="resTime">-</span> с</p>
+            <p>Дальність (L): <span id="resDist">-</span> м</p>
+            <p>Макс. висота (H<sub>max</sub>): <span id="resHeight">-</span> м</p>
+        </div>
+
+        <canvas id="myCanvas" width="600" height="400"></canvas>
+    </div>
+
+    <div class="footer">
+        by brshsh
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
