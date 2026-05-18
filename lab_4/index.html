@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №4</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <select id="pointSelector" class="wide-input">
+                <option value="5">5 точок</option>
+                <option value="10">10 точок</option>
+                <option value="20">20 точок</option>
+            </select>
+            <button id="btnLagrange" class="narrow-btn">Лагранж</button>
+            <button id="btnMNK" class="narrow-btn">МНК</button>
+        </div>
+
+        <div class="chart-wrapper">
+            <canvas id="mainCanvas"></canvas>
+        </div>
+    </div>
+
+    <footer>brshsh</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

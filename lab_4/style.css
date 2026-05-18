@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Old London';
+    src: local('Old London'), url('https://fonts.cdnfonts.com/s/16045/OldLondon.woff') format('woff');
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 30px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.wide-input, .narrow-btn {
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #555555;
+    font-size: 16px;
+    outline: none;
+}
+
+.wide-input {
+    flex-grow: 1;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 0 15px;
+}
+
+.narrow-btn {
+    width: 120px;
+    background-color: #222222;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.narrow-btn.active, .narrow-btn:hover {
+    background-color: #444444;
+    border-color: #ffffff;
+}
+
+.chart-wrapper {
+    background-color: #0a0a0a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    flex-grow: 1;
+    min-height: 440px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 12px 0;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: 'Old London', serif;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+}
