@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentData = data5;
     let currentMethod = null;
     let chartInstance = null;
+    let animationTimer = null; 
 
     function calcLagrange(x, points) {
         let result = 0;
@@ -64,16 +65,38 @@ document.addEventListener("DOMContentLoaded", function() {
         return points;
     }
 
-    function renderCurve() {
-        if (!currentMethod) return;
-        const targetPoints = getFullCurvePoints();
-        chartInstance.data.datasets[1].data = targetPoints;
-        chartInstance.update();
+    function startLineAnimation() {
+        if (animationTimer) cancelAnimationFrame(animationTimer);
+        
+        const fullTargetPoints = getFullCurvePoints();
+        let currentIndex = 0;
+        
+        chartInstance.data.datasets[1].data = [];
+        chartInstance.update('none');
+
+        function drawNextPoint() {
+            if (currentIndex < fullTargetPoints.length) {
+                chartInstance.data.datasets[1].data.push(fullTargetPoints[currentIndex]);
+                
+                if (currentIndex + 1 < fullTargetPoints.length) {
+                    currentIndex++;
+                    chartInstance.data.datasets[1].data.push(fullTargetPoints[currentIndex]);
+                }
+
+                chartInstance.update('none'); 
+                currentIndex++;
+                
+                animationTimer = requestAnimationFrame(drawNextPoint);
+            }
+        }
+        
+        drawNextPoint();
     }
 
     function renderBaseChart() {
         const ctx = document.getElementById('mainCanvas').getContext('2d');
         if (chartInstance) chartInstance.destroy();
+        if (animationTimer) cancelAnimationFrame(animationTimer);
 
         chartInstance = new Chart(ctx, {
             type: 'line',
@@ -110,14 +133,14 @@ document.addEventListener("DOMContentLoaded", function() {
         currentMethod = 'lagrange';
         this.classList.add('active');
         document.getElementById('btnMNK').classList.remove('active');
-        renderCurve();
+        startLineAnimation();
     });
 
     document.getElementById('btnMNK').addEventListener('click', function() {
         currentMethod = 'mnk';
         this.classList.add('active');
         document.getElementById('btnLagrange').classList.remove('active');
-        renderCurve();
+        startLineAnimation();
     });
 
     renderBaseChart();
